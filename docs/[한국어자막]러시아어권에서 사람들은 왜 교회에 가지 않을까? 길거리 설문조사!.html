@@ -1,0 +1,31 @@
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><p><div class='embed-container'><iframe name="video" src='https://www.youtube.com/embed/qTgqC8Gv1D4' frameborder='0' allowfullscreen></iframe></div>
+<script src="static/youtube.external.subtitle/youtube.external.subtitle.js"></script>
+<script src="static/js/subtitles.parser.js"></script>
+<script>
+var loadSRT = function(url, callback) {
+    var httpRequest = new XMLHttpRequest();
+
+    httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            var subtitles = parser.fromSrt(httpRequest.responseText, true);
+
+            for (var i in subtitles) {
+                subtitles[i] = {
+                    start : subtitles[i].startTime / 1000,
+                    end   : subtitles[i].endTime / 1000,
+                    text  : subtitles[i].text
+                };
+            }
+
+            callback(subtitles);
+        }
+    };
+
+    httpRequest.open('GET', url, true);
+    httpRequest.send(null);
+};
+
+loadSRT('/Почему люди не ходят в церковь? Соц-опрос!(kor).srt', function(subtitles) {
+    var youtubeExternalSubtitle = new YoutubeExternalSubtitle.Subtitle(document.getElementById('video'), subtitles);
+});
+</script>
