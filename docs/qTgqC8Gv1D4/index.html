@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <base href="../../" />
+    <!--[if lt IE 9]>
+    <script src="static/bootstrap/js/html5shiv.min.js"></script>
+    <script src="static/bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="static/js/jquery-1.11.2.min.js"></script>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><p><div class='embed-container'><iframe name="video" src='https://www.youtube.com/embed/qTgqC8Gv1D4' frameborder='0' allowfullscreen></iframe></div>
 <script src="static/youtube.external.subtitle/youtube.external.subtitle.js"></script>
 <script src="static/js/subtitles.parser.js"></script>
@@ -25,7 +39,7 @@ var loadSRT = function(url, callback) {
     httpRequest.send(null);
 };
 
-loadSRT('/static/srt/qTgqC8Gv1D4.srt', function(subtitles) {
+loadSRT('qTgqC8Gv1D4/sub.srt', function(subtitles) {
     var youtubeExternalSubtitle = new YoutubeExternalSubtitle.Subtitle(document.getElementById('video'), subtitles);
 });
 </script>
