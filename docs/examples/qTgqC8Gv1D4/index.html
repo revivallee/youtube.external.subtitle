@@ -25,7 +25,7 @@ var loadSRT = function(url, callback) {
     httpRequest.send(null);
 };
 
-loadSRT('sub.srt', function(subtitles) {
+loadSRT('examples/qTgqC8Gv1D4/sub.srt', function(subtitles) {
     var youtubeExternalSubtitle = new YoutubeExternalSubtitle.Subtitle(document.getElementById('video'), subtitles);
 });
 </script>
