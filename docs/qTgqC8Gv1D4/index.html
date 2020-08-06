@@ -20,11 +20,6 @@ httpRequest.onreadystatechange = function() {
     }
 };
 
-httpRequest.open('GET', 'http://www.lejuel.net/lyricsub/jule.srt', true);
+httpRequest.open('GET', 'https://revivallee.github.io/youtube.external.subtitle/qTgqC8Gv1D4/sub.srt', true);
 httpRequest.send(null);
-</script>
-
-loadSRT('https://revivallee.github.io/youtube.external.subtitle/qTgqC8Gv1D4/sub.srt', function(subtitles) {
-    var youtubeExternalSubtitle = new YoutubeExternalSubtitle.Subtitle(document.getElementById('video'), subtitles);
-});
 </script>
